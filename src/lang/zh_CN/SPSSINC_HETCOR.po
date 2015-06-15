@@ -1,0 +1,98 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2014
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: R 2.3.0\n"
+"Report-Msgid-Bugs-To: bugs@r-project.org\n"
+"POT-Creation-Date: 2009-03-16 15:39\n"
+"PO-Revision-Date: 2009-04-23 16:01\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+# NLS_ENCODING=UTF-8
+# IBMUPYTH
+
+msgid "At least two variables must be specified"
+msgstr ""
+"必须至少指定两个变量"
+
+msgid "The following R package is required but could not be loaded:"
+msgstr ""
+"需要下列 R 包，但未能装入："
+
+msgid "%s command failed"
+msgstr ""
+"%s 命令失败"
+
+msgid "%s command was unable to compute the correlations due to data conditions.\n"
+"This is usually due to some variables being too far from a bivariate normal distribution."
+msgstr ""
+"%s 命令因数据条件而无法计算相关性。\n"
+"这通常是由于某些变量距离双变量正态分布过远所致。"
+
+msgid "Heterogeneous Correlation"
+msgstr ""
+"非齐性相关性"
+
+msgid "Pearson, Polyserial, and Polychoric Correlations"
+msgstr ""
+"皮尔逊相关性、多序列相关性和多分格相关性"
+
+msgid "Correlations"
+msgstr ""
+"相关性"
+
+msgid "Correlations computed by R %s package"
+msgstr ""
+"由 R %s 程序包计算的相关性"
+
+msgid "Variables"
+msgstr ""
+"变量"
+
+msgid "Statistics"
+msgstr ""
+"统计"
+
+msgid "Correlation"
+msgstr ""
+"相关性"
+
+msgid "Std. Error"
+msgstr ""
+"标准误差"
+
+msgid "N"
+msgstr ""
+"个案数"
+
+msgid "N = %s"
+msgstr ""
+"个案数 = %s"
+
+msgid "Correlation Types"
+msgstr ""
+"相关性类型"
+
+msgid "Pearson"
+msgstr ""
+"皮尔逊"
+
+msgid "Polychoric"
+msgstr ""
+"多分格"
+
+msgid "Polyserial"
+msgstr ""
+"多序列"
