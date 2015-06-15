@@ -1,0 +1,98 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2014
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: R 2.3.0\n"
+"Report-Msgid-Bugs-To: bugs@r-project.org\n"
+"POT-Creation-Date: 2009-03-16 15:39\n"
+"PO-Revision-Date: 2009-04-23 16:01\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+# NLS_ENCODING=UTF-8
+# IBMUPYTH
+
+msgid "At least two variables must be specified"
+msgstr ""
+"Se deben especificar al menos dos variables"
+
+msgid "The following R package is required but could not be loaded:"
+msgstr ""
+"Se requiere el siguiente paquete R pero no se ha podido cargar:"
+
+msgid "%s command failed"
+msgstr ""
+"El comando %s ha fallado"
+
+msgid "%s command was unable to compute the correlations due to data conditions.\n"
+"This is usually due to some variables being too far from a bivariate normal distribution."
+msgstr ""
+"El comando %s no ha podido calcular las correlaciones debido a condiciones de datos. \n"
+"Normalmente, esto se debe a que algunas variables están demasiado lejos de una distribución normal de bivariante."
+
+msgid "Heterogeneous Correlation"
+msgstr ""
+"Correlaciones heterogéneas"
+
+msgid "Pearson, Polyserial, and Polychoric Correlations"
+msgstr ""
+"Correlaciones de Pearson, policóricas y poliseriales"
+
+msgid "Correlations"
+msgstr ""
+"Correlaciones"
+
+msgid "Correlations computed by R %s package"
+msgstr ""
+"Correlaciones calculadas por el paquete R %s"
+
+msgid "Variables"
+msgstr ""
+"Variables"
+
+msgid "Statistics"
+msgstr ""
+"Estadísticos"
+
+msgid "Correlation"
+msgstr ""
+"Correlación"
+
+msgid "Std. Error"
+msgstr ""
+"Error estándar"
+
+msgid "N"
+msgstr ""
+"N"
+
+msgid "N = %s"
+msgstr ""
+"N = %s"
+
+msgid "Correlation Types"
+msgstr ""
+"Tipos de correlación"
+
+msgid "Pearson"
+msgstr ""
+"Pearson"
+
+msgid "Polychoric"
+msgstr ""
+"Policóricas"
+
+msgid "Polyserial"
+msgstr ""
+"Poliseriales"
