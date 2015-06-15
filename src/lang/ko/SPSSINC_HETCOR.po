@@ -1,0 +1,98 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2014
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+msgid ""
+msgstr ""
+"Project-Id-Version: R 2.3.0\n"
+"Report-Msgid-Bugs-To: bugs@r-project.org\n"
+"POT-Creation-Date: 2009-03-16 15:39\n"
+"PO-Revision-Date: 2009-04-23 16:01\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+# NLS_ENCODING=UTF-8
+# IBMUPYTH
+
+msgid "At least two variables must be specified"
+msgstr ""
+"2개 이상의 변수를 지정해야 합니다."
+
+msgid "The following R package is required but could not be loaded:"
+msgstr ""
+"다음 R 패키지가 필요하지만 로드할 수 없습니다."
+
+msgid "%s command failed"
+msgstr ""
+"%s 명령문 실패"
+
+msgid "%s command was unable to compute the correlations due to data conditions.\n"
+"This is usually due to some variables being too far from a bivariate normal distribution."
+msgstr ""
+"데이터 조건으로 인해 %s 명령문이 상관관계를 계산할 수 없습니다.\n "
+"일반적으로 일부 변수가 이변량 정규분포와 거리가 멀기 때문입니다."
+
+msgid "Heterogeneous Correlation"
+msgstr ""
+"이질적 상관관계"
+
+msgid "Pearson, Polyserial, and Polychoric Correlations"
+msgstr ""
+"Pearson, Polyserial 및 Polychoric 상관관계"
+
+msgid "Correlations"
+msgstr ""
+"상관관계"
+
+msgid "Correlations computed by R %s package"
+msgstr ""
+"R %s 패키지에 의해 계산된 상관관계"
+
+msgid "Variables"
+msgstr ""
+"변수"
+
+msgid "Statistics"
+msgstr ""
+"통계량(S)"
+
+msgid "Correlation"
+msgstr ""
+"상관관계"
+
+msgid "Std. Error"
+msgstr ""
+"표준오차"
+
+msgid "N"
+msgstr ""
+"N"
+
+msgid "N = %s"
+msgstr ""
+"N = %s"
+
+msgid "Correlation Types"
+msgstr ""
+"상관관계 유형"
+
+msgid "Pearson"
+msgstr ""
+"Pearson"
+
+msgid "Polychoric"
+msgstr ""
+"Polychoric"
+
+msgid "Polyserial"
+msgstr ""
+"Polyserial"
