@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>SPSSINC HETCOR Extension Command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+
+
+
+
+</head>
+
+<body>
+<h1>SPSSINC HETCOR Extension Command</h1>
+
+<p>Compute a set of Pearson, polychoric, or polyserial correlations
+according the measurement levels of the variables.</p>
+<div class="syntax">
+<p>SPSSINC HETCOR <em>variables</em><sup>&#42;</sup></p>
+
+<p>/OPTIONS ESTIMATOR=TWOSTEP<sup>&#42;&#42;</sup> or ML<br/>
+STDERR=TRUE<sup>&#42;&#42;</sup> or FALSE<br/>
+N=TRUE<sup>&#42;&#42;</sup> or FALSE<br/>
+TYPE=TRUE<sup>&#42;&#42;</sup> or FALSE<br/>
+MISSING=PAIRWISE<sup>&#42;&#42;</sup> or LISTWISE<br/>
+EXECUTE=TRUE<sup>&#42;&#42;</sup> or FALSE</p>
+
+<p>/SAVE PROGRAMFILE=&ldquo;<em>filespec</em>&rdquo;</p>
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default</p>
+</div>
+<p>SPSSINC HETCOR /HELP prints this information and does nothing else.</p>
+
+<p>Split files and weight are not honored by this command.</p>
+
+
+<pre class="example"><code>SPSSINC HETCOR var1 var2 var3 /OPTIONS STDERR=TRUE.
+</code></pre>
+
+<p>The variable list specifies the variables to be correlated.
+The type of correlation is determined by the 
+measurement levels of each pair of variables.</p>
+
+<h2>OPTIONS</h2>
+
+<p><strong>ESTIMATOR</strong> specifies the estimator. TWOSTEP may execute considerably
+faster and is the default.  ML can fail to converge in some cases.</p>
+
+<p><strong>STDERR</strong>=TRUE causes a standard error to be included in the output.</p>
+
+<p><strong>N</strong>=TRUE causes the count for each correlation to be displayed.
+It is ignored if STDERR=FALSE.</p>
+
+<p><strong>TYPE</strong>=TRUE causes a separate table of the correlation types to be displayed.</p>
+
+<p><strong>EXECUTE</strong>=FALSE processes the command syntax but does not execute it.
+This is mainly useful in combination with SAVE PROGRAMFILE.</p>
+
+<h2>PROGRAMFILE</h2>
+
+<p>PROGRAMFILE causes the R code that implements the hetcor function to be
+written to the specified file.</p>
+
+<p>The SPSSINC HETCOR command requires both the Python and R Integration Plug-ins. package.</p>
+
+<p>&copy; Copyright IBM Corp. 1989, 2014</p>
+
+</body>
+
+</html>
+
