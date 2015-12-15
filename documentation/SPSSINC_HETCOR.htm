@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Polyserial, Polychoric, and Pearson Correlations</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+
+<body>
+  <h1>Categorical Correlations</h1>This procedure calculates
+  correlations for nominal, ordinal, and scale variables,
+  accounting for the measurement levels of the variables. The
+  procedure uses the hetcor function from the R polycor package.
+
+  <p>To run this procedure:</p>
+
+  <p class="step"><span class="step-glyph">►</span>&nbsp;Select the
+  variables to be correlated. Note that if a pair of variables is
+  too far from being approximated by a bivariate normal
+  distribution, the calculations may fail to converge.</p>
+
+  <p>Optionally, you can:</p>
+
+  <p class="bullet">•&nbsp;Specify the handling of missing values.
+  By default, each correlation is computed from all available data.
+  Select <span class="screen">Delete missing values listwise</span>
+  to specify that cases with missing values are omitted from the
+  analysis.</p>
+
+  <p class="bullet">•&nbsp;Specify the content of the output. By
+  default, the output includes a table of correlations. You can
+  specify whether the sample size and the correlation standard
+  error are included in this table. <span class="screen">Include
+  table of correlation types</span> produces a separate table
+  indicating the type of correlation calculated for each pair of
+  variables ("Pearson", "Polyserial", or "Polychoric").</p>
+
+  <p class="bullet">•&nbsp;Specify the estimation method. Twostep
+  can be considerably faster and is the default. Maximum likelihood
+  appears more likely to suffer convergence failure.</p>
+
+  <h2>Save Subdialog</h2>
+
+  <p><span class="runinhead">Save R Implementation Code.</span> The
+  R implementation code used to perform the analysis is written to
+  the specified file, and may be useful as a starting point for
+  extending the analysis.</p>
+
+  <p><span class="runinhead">Calculate correlations.</span> When
+  saving the R implementation code, you may want to uncheck this
+  box. This results in saving the implementation code without
+  running the analysis.</p>
+
+  <h2>Additional Features</h2>This dialog generates syntax for the
+  SPSSINC HETCOR extension command. To display help for this
+  command, run the following syntax:
+
+  <p class="codeblock">SPSSINC HETCOR /HELP.</p>
+
+  <h2>Requirements</h2>
+
+  <p>This dialog requires the Integration Plug-In for Python, the
+  Integration Plug-In for R and the R polycor package. For more
+  information, see How to Get Integration Plug-Ins, available under
+  Core System &gt; Frequently Asked Questions in the IBM® SPSS®
+  Statistics Help system.</p><br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

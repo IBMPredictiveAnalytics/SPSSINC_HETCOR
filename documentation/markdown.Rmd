@@ -1,0 +1,57 @@
+SPSSINC HETCOR Extension Command
+================================
+
+Compute a set of Pearson, polychoric, or polyserial correlations
+according the measurement levels of the variables.
+
+SPSSINC HETCOR *variables*^&#42;
+
+/OPTIONS ESTIMATOR=TWOSTEP^&#42;&#42; or ML  
+STDERR=TRUE^&#42;&#42; or FALSE  
+N=TRUE^&#42;&#42; or FALSE  
+TYPE=TRUE^&#42;&#42; or FALSE  
+MISSING=PAIRWISE^&#42;&#42; or LISTWISE  
+EXECUTE=TRUE^&#42;&#42; or FALSE
+
+/SAVE PROGRAMFILE="*filespec*"
+
+^&#42; Required  
+^&#42;&#42; Default
+
+SPSSINC HETCOR /HELP prints this information and does nothing else.
+
+
+Split files and weight are not honored by this command.
+
+Example:
+```
+SPSSINC HETCOR var1 var2 var3 /OPTIONS STDERR=TRUE.
+```
+
+The variable list specifies the variables to be correlated.
+The type of correlation is determined by the 
+measurement levels of each pair of variables.
+
+OPTIONS
+-------
+**ESTIMATOR** specifies the estimator. TWOSTEP may execute considerably
+faster and is the default.  ML can fail to converge in some cases.
+
+**STDERR**=TRUE causes a standard error to be included in the output.
+
+**N**=TRUE causes the count for each correlation to be displayed.
+It is ignored if STDERR=FALSE.
+
+**TYPE**=TRUE causes a separate table of the correlation types to be displayed.
+
+**EXECUTE**=FALSE processes the command syntax but does not execute it.
+This is mainly useful in combination with SAVE PROGRAMFILE.
+
+PROGRAMFILE
+-----------
+PROGRAMFILE causes the R code that implements the hetcor function to be
+written to the specified file.
+
+The SPSSINC HETCOR command requires both the Python and R Integration Plug-ins. package.
+
+(C) Copyright IBM Corp. 1989, 2014
