@@ -1,11 +1,13 @@
 # SPSSINC HETCOR
-## Calculate correlations between nominal, ordinal, and scale va
- This procedure calculates correlations between nominal, o  rdinal, and scale variables, accounting for the measurement levels of   the variables. The resulting heterogeneous correlation matrix consis  ts of Pearson product-moment correlations between scale variables, po  lyserial correlations between scale and categorical variables, and po  lychoric correlations between categorical variables. The procedure us  es the hetcor function from the R polycor package.
+## Calculate correlations between nominal, ordinal, and scale variables
+ This procedure calculates correlations between nominal, ordinal, and scale variables, accounting for the measurement levels of the variables. The resulting heterogeneous correlation matrix consists of Pearson product-moment correlations between scale variables, polyserial correlations between scale and categorical variables, and polychoric correlations between categorical variables. The procedure uses the hetcor function from the R polycor package.
 
 ---
 Requirements
 ----
-- IBM SPSS Statistics 18 or later
+- IBM SPSS Statistics 18 or later, the corresponding IBM SPSS Statistics-Integration Plug-in for Python and the IBM SPSS Statistics-Integration Plug-in for R.
+
+Note: The SPSSINC HETCOR extension bundle and the R polycor package are installed as part of IBM SPSS Statistics-Essentials for R.
 
 ---
 Installation intructions
