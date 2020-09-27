@@ -5,13 +5,13 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 1989, 2014
+# * (C) Copyright IBM Corp. 1989, 2020
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
 # ************************************************************************/
 
-from __future__ import with_statement
+
 
 __author__ = "SPSS, JKP"
 __version__ = "2.0.4"
@@ -133,7 +133,7 @@ def rpolycor(data, estimator="twostep", stderr=True, missing="pairwise", n=True,
     stderr = stderr and "TRUE" or "FALSE"
     missing = missing == "listwise" and "complete.obs" or "pairwise.complete.obs"
     if len(data) < 2:
-        print u(t.lgettext("At least two variables must be specified"))
+        print(u(t.gettext("At least two variables must be specified")))
         raise ValueError
 
     # check the measurement levels and code accordingly
@@ -219,7 +219,7 @@ END PROGRAM.
 def Run(args):
     """Execute the HETCOR command"""
 
-    args = args[args.keys()[0]]
+    args = args[list(args.keys())[0]]
 
     oobj = Syntax([
         Template("", subc="",  ktype="existingvarlist", var="data", islist=True),
@@ -231,7 +231,7 @@ def Run(args):
         Template("PROGRAMFILE", subc="SAVE", ktype="literal", var="programfile"),
         Template("EXECUTE", subc="OPTIONS", ktype="bool", var="execute")])
 
-    if args.has_key("HELP"):
+    if "HELP" in args:
         #print helptext
         helper()
     else:
@@ -251,7 +251,7 @@ def helper():
     # webbrowser.open seems not to work well
     browser = webbrowser.get()
     if not browser.open_new(helpspec):
-        print("Help file not found:" + helpspec)
+        print(("Help file not found:" + helpspec))
 try:    #override
     from extension import helper
 except:
@@ -275,33 +275,33 @@ def genoutput(outputfilespec, data, stderr, ctype, n, missing, t):
     # default gets written with comma decimals in a comma-decimal locale
     # so replace with period to allow computations to proceed
     try:
-        r = csv.reader(file(outputfilespec, "rb"), delimiter= " ")
+        r = csv.reader(open(outputfilespec, "r"), delimiter=" ")
         lines = [line for line in r]
         for i in range(len(lines)):
             lines[i] = [item.replace(",", ".") for item in lines[i]]
     except:
-        print u(t.lgettext("%s command failed")%"SPSSINC HETCOR")
+        print(u(t.gettext("%s command failed") % "SPSSINC HETCOR"))
         raise Exception
     data = data[2:-1].split()
     varCount = len(data)
     if lines.pop(0) == ["COMMAND FAILED"]:
-        print u(t.lgettext("%s command was unable to compute the correlations due to data conditions.\n"
-                           "This is usually due to some variables being too far from a bivariate normal distribution.")%"SPSS HETCOR")
+        print(u(t.gettext("%s command was unable to compute the correlations due to data conditions.\n"
+                           "This is usually due to some variables being too far from a bivariate normal distribution.")%"SPSS HETCOR"))
         raise Exception
 
-    StartProcedure(u(t.lgettext("Heterogeneous Correlation")),"SPSSINC HETCOR")
-    pt = spss.BasePivotTable(u(t.lgettext("Pearson, Polyserial, and Polychoric Correlations")),
-                             "HeterogeneousCorrelations", u(t.lgettext("Correlations")), isSplit=False, caption=u(t.lgettext("Correlations computed by R %s package")%"Hetcor"))
-    coldim = pt.Append(spss.Dimension.Place.column, u(t.lgettext("Variables"))+" ")
-    rowdim1 = pt.Append(spss.Dimension.Place.row, u(t.lgettext("Variables")))
-    rowdim2 = pt.Append(spss.Dimension.Place.row, u(t.lgettext("Statistics")))
+    StartProcedure(u(t.gettext("Heterogeneous Correlation")), "SPSSINC HETCOR")
+    pt = spss.BasePivotTable(u(t.gettext("Pearson, Polyserial, and Polychoric Correlations")),
+                             "HeterogeneousCorrelations", u(t.gettext("Correlations")), isSplit=False, caption=u(t.gettext("Correlations computed by R %s package")%"Hetcor"))
+    coldim = pt.Append(spss.Dimension.Place.column, u(t.gettext("Variables"))+" ")
+    rowdim1 = pt.Append(spss.Dimension.Place.row, u(t.gettext("Variables")))
+    rowdim2 = pt.Append(spss.Dimension.Place.row, u(t.gettext("Statistics")))
     rowdim1cats = [CellText.String(v.strip(',"')) for v in data]   # should be VarName, but that requires an index
     pt.SetCategories(rowdim1, rowdim1cats)
-    catlist = [u(t.lgettext("Correlation"))]
+    catlist = [u(t.gettext("Correlation"))]
     if stderr:
-        catlist.append(u(t.lgettext("Std. Error")))
+        catlist.append(u(t.gettext("Std. Error")))
         if n and not missing == "complete.obs":
-            catlist.append(u(t.lgettext("N")))
+            catlist.append(u(t.gettext("N")))
     rowdim2cats = [CellText.String(v) for v in catlist]
     pt.SetCategories(rowdim2, rowdim2cats )
     pt.SetCategories(coldim, rowdim1cats)
@@ -311,13 +311,13 @@ def genoutput(outputfilespec, data, stderr, ctype, n, missing, t):
             line = [cellFloatOrElse(lin) for lin in lines[i + j * varCount][1:]]
             pt.SetCellsByRow((rowdim1cats[i], rowdim2cats[j]), line)
     if missing == "complete.obs":
-        pt.TitleFootnotes(u(t.lgettext("N = %s") % lines[-varCount-1][1]))
+        pt.TitleFootnotes(u(t.gettext("N = %s") % lines[-varCount-1][1]))
     if ctype:
         # variable by variable correlation types
-        pt = spss.BasePivotTable(u(t.lgettext("Correlation Types")),
-                                 "CorrelationTypes", u(t.lgettext("Correlation Types")), isSplit=False)
-        coldim = pt.Append(spss.Dimension.Place.column, u(t.lgettext("Variables"))+" ")
-        rowdim1 = pt.Append(spss.Dimension.Place.row, u(t.lgettext("Variables")))
+        pt = spss.BasePivotTable(u(t.gettext("Correlation Types")),
+                                 "CorrelationTypes", u(t.gettext("Correlation Types")), isSplit=False)
+        coldim = pt.Append(spss.Dimension.Place.column, u(t.gettext("Variables"))+" ")
+        rowdim1 = pt.Append(spss.Dimension.Place.row, u(t.gettext("Variables")))
         pt.SetCategories(rowdim1, rowdim1cats)
         pt.SetCategories(coldim, rowdim1cats)
 
@@ -327,7 +327,7 @@ def genoutput(outputfilespec, data, stderr, ctype, n, missing, t):
         lenlines = len(lines)
         for i in range(varCount):		
             line = [CellText.String(lin == "" and "--" or
-                u(t.lgettext(lin))) for lin in lines[i + lenlines - varCount][1:]]
+                u(t.gettext(lin))) for lin in lines[i + lenlines - varCount][1:]]
             pt.SetCellsByRow(rowdim1cats[i], line)
     spss.EndProcedure()
 
