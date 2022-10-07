@@ -79,6 +79,10 @@ written to the specified file.
 
 The SPSSINC HETCOR command requires both the Python and R Integration Plug-ins. package.
 
+### Output
+<img width="802" alt="image" src="https://user-images.githubusercontent.com/19230800/194571307-8434c9c6-ea3d-4c75-8a7f-3f465d9e5ebb.png">
+
+
 ---
 License
 ----
