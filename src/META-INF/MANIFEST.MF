@@ -1,4 +1,5 @@
 Name: SPSSINC HETCOR
+Display-Name: Heterogenous Correlation
 Dialog-Specs: SPSSINC_HETCOR.spd
 Command-Specs: SPSSINC_HETCOR.xml
 Code-Files: SPSSINC_HETCOR.py
