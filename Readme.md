@@ -20,9 +20,9 @@ Installation intructions
 Tutorial
 ----
 ### Installation Location
-Analyze
+Analyze →
 
-&nbsp;&nbsp;Correlate 
+&nbsp;&nbsp;Correlate  →
 
 &nbsp;&nbsp;&nbsp;&nbsp;Heterogeneous Correlations...
 
